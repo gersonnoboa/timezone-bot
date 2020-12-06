@@ -1,0 +1,23 @@
+{
+  "name": "timezone-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/gersonnoboa/timezone-bot.git"
+  },
+  "author": "Gerson Noboa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/gersonnoboa/timezone-bot/issues"
+  },
+  "homepage": "https://gitlab.com/gersonnoboa/timezone-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "eslint": "^7.15.0"
+  }
+}
