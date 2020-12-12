@@ -1,4 +1,5 @@
 const TimeMatcher = require("./time-matcher");
+const TimeConverter = require("./time-converter");
 
 class Bot {
     constructor(client, config) {
@@ -28,7 +29,9 @@ class Bot {
         let time = timeMatcher.getTime(content);
         if (time === undefined) { return }
 
-        message.channel.send(`La hora es ${time}`);
+        const timeConverter = new TimeConverter();
+        const message = timeConverter.convert(time, message.user.username);
+        message.channel.send(message);
     }
 }
 

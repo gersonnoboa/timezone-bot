@@ -1,4 +1,3 @@
-const { TestScheduler } = require("jest");
 const TimeMatcher = require("../../src/classes/time-matcher");
 const timeMatcher = new TimeMatcher();
 
@@ -70,5 +69,11 @@ describe('getting the hour', () => {
         test('does not get 5PM', () => {
             expect(timeArray).not.toEqual("5 PM");
         });
+    });
+});
+
+describe('errors', () => {
+    test('returns undefined when there are no matches', () => {
+        expect(timeMatcher.getTime("pizza")).toBeUndefined();
     });
 });

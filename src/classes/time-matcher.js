@@ -8,7 +8,7 @@ class TimeMatcher {
     getTime(message) {
         let matches = message.match(timeRegex)
         
-        if (matches.length === 0) { return undefined; }
+        if (matches == null || matches.length === 0) { return undefined; }
         else { return matches[0]; }
     }
 }
