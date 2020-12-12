@@ -1,5 +1,5 @@
 const TimeMatcher = require("./time-matcher");
-const TimeConverter = require("./time-converter");
+const BotTimeConvert = require("./bot-time-convert")
 
 class Bot {
     constructor(client, config) {
@@ -16,23 +16,18 @@ class Bot {
         
         this.client.on('message', message => {
             if (message.author.bot) { return }
-            console.log(message.author);
-            this.matchMessage(message);
+
+            this.sendTimesMessageIfPossible(message);    
         });
     }
 
-    matchMessage(message) {
-        const timeMatcher = new TimeMatcher();
-        const content = message.content; 
-        if (!timeMatcher.hasTime(content)) { return }
+    sendTimesMessageIfPossible(message) {
+        const timesMessage = new BotTimeConvert().convert(message);
+        if (timesMessage == null) { return }
 
-        let time = timeMatcher.getTime(content);
-        if (time === undefined) { return }
-
-        const timeConverter = new TimeConverter();
-        const message = timeConverter.convert(time, message.user.username);
-        message.channel.send(message);
+        message.channel.send(timesMessage);
     }
+    
 }
 
 module.exports = Bot;

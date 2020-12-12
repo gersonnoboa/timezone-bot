@@ -1,7 +1,7 @@
-const regions = {
+const Regions = {
     ECUADOR: 'Ecuador',
     UK: 'UK',
     ESTONIA: 'Estonia'
 }
 
-module.exports = regions;
+module.exports = Regions;
