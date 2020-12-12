@@ -13,4 +13,8 @@ describe('Region mapper', () => {
     test('Ecuador', () => {
         expect(RegionMapper.map(Regions.ECUADOR)).toEqual("America/Guayaquil");
     });
+
+    test('Other', () => {
+        expect(RegionMapper.map("")).toEqual("UTC");
+    });
 })
