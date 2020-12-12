@@ -1,5 +1,5 @@
 const TimeMatcher = require("./time-matcher");
-const BotTimeConvert = require("./time-converter")
+const TimeConverter = require("./time-converter")
 
 class Bot {
     constructor(client, config) {
@@ -28,7 +28,7 @@ class Bot {
     }
 
     sendTimesMessageIfPossible(message) {
-        const timesMessage = new BotTimeConvert().convert(message);
+        const timesMessage = new TimeConverter().convert(message);
         if (timesMessage == null) { return }
 
         message.channel.send(timesMessage);
