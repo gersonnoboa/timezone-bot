@@ -5,7 +5,7 @@ const TimezoneConverter = require("./timezone-converter");
 const TimeCalculator = require("./time-calculator");
 const RegionDate = require("../models/region-date");
 
-class BotTimeConvert {
+class TimeConverter {
     convert(message) {
         const time = this._getTime(message.content);
         if (time == null) { return undefined }
@@ -39,4 +39,4 @@ class BotTimeConvert {
     }
 }
 
-module.exports = BotTimeConvert;
+module.exports = TimeConverter;

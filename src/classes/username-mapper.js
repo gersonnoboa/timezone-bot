@@ -1,13 +1,13 @@
-const regions = require("../models/region");
+const Regions = require("../models/region");
 
 class UsernameMapper {
     static map(user) {
         if (user === 'Gerson') {
-            return regions.ESTONIA;
+            return Regions.ESTONIA;
         } else if (user === 'JoseJarrin91') {
-            return regions.UK;
+            return Regions.UK;
         } else {
-            return regions.ECUADOR;
+            return Regions.ECUADOR;
         }
     }
 }

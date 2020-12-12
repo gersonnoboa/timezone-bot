@@ -1,5 +1,4 @@
-const regions = require("../models/region");
-const RegionMapper = require("../models/region-mapper");
+const RegionMapper = require("./region-mapper");
 
 class TimezoneConverter {
     static convertTimezoneHard(date, region) {

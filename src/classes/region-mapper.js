@@ -1,4 +1,4 @@
-const Regions = require("./region");
+const Regions = require("../models/region");
 
 class RegionMapper {
     static map(region) {

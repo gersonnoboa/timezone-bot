@@ -1,5 +1,5 @@
 const TimeMatcher = require("./time-matcher");
-const BotTimeConvert = require("./bot-time-convert")
+const BotTimeConvert = require("./time-converter")
 
 class Bot {
     constructor(client, config) {
@@ -8,10 +8,16 @@ class Bot {
     }
 
     start() {
+        const token = `${this.config.token}`;
+        if (!token) { 
+            console.error("No token provided in config.json");
+            process.exit(1);
+        }
+
         this.client.once('ready', () => {
             console.log('Ready!');
         });
-        
+
         this.client.login(this.config.token);
         
         this.client.on('message', message => {

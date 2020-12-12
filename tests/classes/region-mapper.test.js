@@ -1,5 +1,5 @@
 const Regions = require("../../src/models/region");
-const RegionMapper = require("../../src/models/region-mapper");
+const RegionMapper = require("../../src/classes/region-mapper");
 
 describe('Region mapper', () => {
     test('Estonia', () => {
