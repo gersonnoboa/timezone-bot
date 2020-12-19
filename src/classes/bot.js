@@ -1,39 +1,43 @@
-const TimeMatcher = require("./time-matcher");
-const TimeConverter = require("./time-converter")
+const TimeConverter = require('./time-converter');
 
 class Bot {
-    constructor(client, config) {
-        this.client = client;
-        this.config = config;
+  constructor(client, config) {
+    this.client = client;
+    this.config = config;
+  }
+
+  start() {
+    const token = `${this.config.token}`;
+    if (!token) {
+      // eslint-disable-next-line no-console
+      console.error('No token provided in config.json');
+      process.exit(1);
     }
 
-    start() {
-        const token = `${this.config.token}`;
-        if (!token) { 
-            console.error("No token provided in config.json");
-            process.exit(1);
-        }
+    this.client.once('ready', () => {
+      // eslint-disable-next-line no-console
+      console.log('Ready!');
+    });
 
-        this.client.once('ready', () => {
-            console.log('Ready!');
-        });
+    this.client.login(this.config.token);
 
-        this.client.login(this.config.token);
-        
-        this.client.on('message', message => {
-            if (message.author.bot) { return }
+    this.client.on('message', (message) => {
+      if (message.author.bot) {
+        return;
+      }
 
-            this.sendTimesMessageIfPossible(message);    
-        });
+      this.sendTimesMessageIfPossible(message);
+    });
+  }
+
+  sendTimesMessageIfPossible(message) {
+    const timesMessage = new TimeConverter().convert(message);
+    if (timesMessage == null) {
+      return;
     }
 
-    sendTimesMessageIfPossible(message) {
-        const timesMessage = new TimeConverter().convert(message);
-        if (timesMessage == null) { return }
-
-        message.channel.send(timesMessage);
-    }
-    
+    message.channel.send(timesMessage);
+  }
 }
 
 module.exports = Bot;

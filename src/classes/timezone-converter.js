@@ -1,18 +1,18 @@
-const RegionMapper = require("./region-mapper");
+const RegionMapper = require('./region-mapper');
 
 class TimezoneConverter {
-    static convertTimezoneHard(date, region) {
-        return this._convertTimezone(date, region, true);
-    }
+  static convertTimezoneHard(date, region) {
+    return this._convertTimezone(date, region, true);
+  }
 
-    static convertTimezoneSoft(date, region) {
-        return this._convertTimezone(date, region, false);
-    }
+  static convertTimezoneSoft(date, region) {
+    return this._convertTimezone(date, region, false);
+  }
 
-    static _convertTimezone(date, region, isHard) {
-        const timezoneName = RegionMapper.map(region);
-        return date.setZone(timezoneName, { keepLocalTime: isHard });
-    }
+  static _convertTimezone(date, region, isHard) {
+    const timezoneName = RegionMapper.map(region);
+    return date.setZone(timezoneName, { keepLocalTime: isHard });
+  }
 }
 
 module.exports = TimezoneConverter;
