@@ -8,10 +8,11 @@ class DateGroup {
 
   toStrings() {
     const strings = [];
-    strings.push(
-      `${this.originalDate.date.toLocaleString(DateTime.TIME_SIMPLE)} en $
-      {this.originalDate.region}`
+    const originalTime = this.originalDate.date.toLocaleString(
+      DateTime.TIME_SIMPLE
     );
+    const originalRegion = this.originalDate.region;
+    strings.push(`${originalTime} en ${originalRegion}`);
 
     for (let index = 0; index < this.additionalDates.length; index += 1) {
       const additionalDate = this.additionalDates[index];

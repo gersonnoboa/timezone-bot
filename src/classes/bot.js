@@ -1,16 +1,15 @@
 const TimeConverter = require('./time-converter');
 
 class Bot {
-  constructor(client, config) {
+  constructor(client) {
     this.client = client;
-    this.config = config;
   }
 
   start() {
-    const token = `${this.config.token}`;
+    const token = process.env.TIMEZONE_BOT_DISCORD_TOKEN;
     if (!token) {
       // eslint-disable-next-line no-console
-      console.error('No token provided in config.json');
+      console.error('No token provided.');
       process.exit(1);
     }
 
@@ -19,7 +18,7 @@ class Bot {
       console.log('Ready!');
     });
 
-    this.client.login(this.config.token);
+    this.client.login(token);
 
     this.client.on('message', (message) => {
       if (message.author.bot) {
