@@ -1,8 +1,10 @@
+import * as dotenv from 'dotenv';
 import TimeConverter from './time-converter.js';
 
 class Bot {
   constructor(client) {
     this.client = client;
+    dotenv.config();
   }
 
   start() {
