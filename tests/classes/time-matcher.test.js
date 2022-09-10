@@ -1,4 +1,4 @@
-const TimeMatcher = require('../../src/classes/time-matcher');
+import TimeMatcher from '../../src/classes/time-matcher.js';
 
 const timeMatcher = new TimeMatcher();
 

@@ -1,17 +1,20 @@
-const Regions = require('../models/region');
+import Region from '../models/region.js';
 
 class UsernameMapper {
   static map(user) {
-    if (user === 'Gerson') {
-      return Regions.ESTONIA;
+    switch (user) {
+      case 'Gerson':
+        return Region.ESTONIA;
+      case 'JoseJarrin91':
+        return Region.UK;
+      case 'RayBryceEU':
+        return Region.CANADA;
+      case 'Hario':
+        return Region.NY;
+      default:
+        return Region.ECUADOR;
     }
-
-    if (user === 'JoseJarrin91') {
-      return Regions.UK;
-    }
-
-    return Regions.ECUADOR;
   }
 }
 
-module.exports = UsernameMapper;
+export default UsernameMapper;

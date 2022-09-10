@@ -1,4 +1,4 @@
-const { DateTime } = require('luxon');
+import { DateTime } from 'luxon';
 
 class DateGroup {
   constructor(originalDate, additionalDates) {
@@ -25,4 +25,4 @@ class DateGroup {
   }
 }
 
-module.exports = DateGroup;
+export default DateGroup;

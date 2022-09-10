@@ -1,4 +1,4 @@
-const TimeConverter = require('./time-converter');
+import TimeConverter from './time-converter.js';
 
 class Bot {
   constructor(client) {
@@ -39,4 +39,4 @@ class Bot {
   }
 }
 
-module.exports = Bot;
+export default Bot;

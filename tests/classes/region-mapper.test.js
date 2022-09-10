@@ -1,17 +1,25 @@
-const Regions = require('../../src/models/region');
-const RegionMapper = require('../../src/classes/region-mapper');
+import Region from '../../src/models/region.js';
+import RegionMapper from '../../src/classes/region-mapper.js';
 
 describe('Region mapper', () => {
   test('Estonia', () => {
-    expect(RegionMapper.map(Regions.ESTONIA)).toEqual('Europe/Tallinn');
+    expect(RegionMapper.map(Region.ESTONIA)).toEqual('Europe/Tallinn');
   });
 
   test('UK', () => {
-    expect(RegionMapper.map(Regions.UK)).toEqual('Europe/London');
+    expect(RegionMapper.map(Region.UK)).toEqual('Europe/London');
   });
 
   test('Ecuador', () => {
-    expect(RegionMapper.map(Regions.ECUADOR)).toEqual('America/Guayaquil');
+    expect(RegionMapper.map(Region.ECUADOR)).toEqual('America/Guayaquil');
+  });
+
+  test('Canada', () => {
+    expect(RegionMapper.map(Region.CANADA)).toEqual('America/St_Johns');
+  });
+
+  test('NY', () => {
+    expect(RegionMapper.map(Region.NY)).toEqual('America/New_York');
   });
 
   test('Other', () => {

@@ -5,4 +5,4 @@ class RegionDate {
   }
 }
 
-module.exports = RegionDate;
+export default RegionDate;

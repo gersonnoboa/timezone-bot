@@ -1,9 +1,9 @@
-const TimeMatcher = require('./time-matcher');
-const TimeToLuxonConverter = require('./time-to-luxon-converter');
-const UsernameMapper = require('./username-mapper');
-const TimezoneConverter = require('./timezone-converter');
-const TimeCalculator = require('./time-calculator');
-const RegionDate = require('../models/region-date');
+import TimeMatcher from './time-matcher.js';
+import TimeToLuxonConverter from './time-to-luxon-converter.js';
+import UsernameMapper from './username-mapper.js';
+import TimezoneConverter from './timezone-converter.js';
+import TimeCalculator from './time-calculator.js';
+import RegionDate from '../models/region-date.js';
 
 class TimeConverter {
   convert(message) {
@@ -45,4 +45,4 @@ class TimeConverter {
   }
 }
 
-module.exports = TimeConverter;
+export default TimeConverter;

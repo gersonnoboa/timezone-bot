@@ -1,18 +1,22 @@
-const Regions = require('../models/region');
+import Region from '../models/region.js';
 
 class RegionMapper {
   static map(region) {
     switch (region) {
-      case Regions.ESTONIA:
+      case Region.ESTONIA:
         return 'Europe/Tallinn';
-      case Regions.UK:
+      case Region.UK:
         return 'Europe/London';
-      case Regions.ECUADOR:
+      case Region.ECUADOR:
         return 'America/Guayaquil';
+      case Region.CANADA:
+        return 'America/St_Johns';
+      case Region.NY:
+        return 'America/New_York';
       default:
         return 'UTC';
     }
   }
 }
 
-module.exports = RegionMapper;
+export default RegionMapper;

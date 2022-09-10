@@ -1,7 +1,9 @@
 const Regions = {
   ECUADOR: 'Ecuador',
+  NY: 'NY',
   UK: 'UK',
   ESTONIA: 'Estonia',
+  CANADA: 'NL',
 };
 
-module.exports = Regions;
+export default Regions;

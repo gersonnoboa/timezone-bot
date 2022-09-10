@@ -16,4 +16,4 @@ class TimeMatcher {
   }
 }
 
-module.exports = TimeMatcher;
+export default TimeMatcher;

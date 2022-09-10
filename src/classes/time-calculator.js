@@ -1,7 +1,7 @@
-const Regions = require('../models/region');
-const TimezoneConverter = require('./timezone-converter');
-const DateGroup = require('../models/date-group');
-const RegionDate = require('../models/region-date');
+import Regions from '../models/region.js';
+import TimezoneConverter from './timezone-converter.js';
+import DateGroup from '../models/date-group.js';
+import RegionDate from '../models/region-date.js';
 
 class TimeCalculator {
   convert(regionDate) {
@@ -26,4 +26,4 @@ class TimeCalculator {
   }
 }
 
-module.exports = TimeCalculator;
+export default TimeCalculator;

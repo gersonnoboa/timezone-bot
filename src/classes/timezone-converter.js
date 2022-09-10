@@ -1,4 +1,4 @@
-const RegionMapper = require('./region-mapper');
+import RegionMapper from './region-mapper.js';
 
 class TimezoneConverter {
   static convertTimezoneHard(date, region) {
@@ -11,8 +11,10 @@ class TimezoneConverter {
 
   static _convertTimezone(date, region, isHard) {
     const timezoneName = RegionMapper.map(region);
-    return date.setZone(timezoneName, { keepLocalTime: isHard });
+    return date.setZone(timezoneName, {
+      keepLocalTime: isHard,
+    });
   }
 }
 
-module.exports = TimezoneConverter;
+export default TimezoneConverter;

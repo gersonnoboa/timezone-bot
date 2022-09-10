@@ -1,4 +1,4 @@
-const Luxon = require('luxon');
+import { DateTime } from 'luxon';
 
 class TimeToLuxonConverter {
   convert(time) {
@@ -23,7 +23,10 @@ class TimeToLuxonConverter {
       minutes = this._getMinutes(time);
     }
 
-    return Luxon.DateTime.fromObject({ hour: hourIn24Hour, minute: minutes });
+    return DateTime.fromObject({
+      hour: hourIn24Hour,
+      minute: minutes,
+    });
   }
 
   _hasPM(time) {
@@ -62,4 +65,4 @@ class TimeToLuxonConverter {
   }
 }
 
-module.exports = TimeToLuxonConverter;
+export default TimeToLuxonConverter;
