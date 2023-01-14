@@ -1,4 +1,5 @@
 import * as dotenv from 'dotenv';
+import { Events } from 'discord.js';
 import TimeConverter from './time-converter.js';
 
 class Bot {
@@ -15,14 +16,14 @@ class Bot {
       process.exit(1);
     }
 
-    this.client.once('ready', () => {
+    this.client.once(Events.ClientReady, () => {
       // eslint-disable-next-line no-console
       console.log('Ready!');
     });
 
     this.client.login(token);
 
-    this.client.on('message', (message) => {
+    this.client.on(Events.MessageCreate, async (message) => {
       if (message.author.bot) {
         return;
       }

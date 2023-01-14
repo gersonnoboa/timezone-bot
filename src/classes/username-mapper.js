@@ -7,7 +7,7 @@ class UsernameMapper {
         return Region.ESTONIA;
       case 'JoseJarrin91':
         return Region.UK;
-      case 'RayBryceEU':
+      case 'RayBryceCA':
         return Region.CANADA;
       case 'Hario':
         return Region.NY;
