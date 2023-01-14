@@ -18,7 +18,7 @@ class Bot {
 
     this.client.once(Events.ClientReady, () => {
       // eslint-disable-next-line no-console
-      console.log('Ready!');
+      console.log('Bot is ready to start receiving messages...');
     });
 
     this.client.login(token);
