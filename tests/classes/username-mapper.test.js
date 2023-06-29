@@ -3,19 +3,19 @@ import Region from '../../src/models/region.js';
 
 describe('Username mapper', () => {
   test('Maps Gerson correctly', () => {
-    expect(UsernameMapper.map('Gerson')).toEqual(Region.ESTONIA);
+    expect(UsernameMapper.map(UsernameMapper.gerson)).toEqual(Region.ESTONIA);
   });
 
   test('Maps Jose correctly', () => {
-    expect(UsernameMapper.map('JoseJarrin91')).toEqual(Region.UK);
+    expect(UsernameMapper.map(UsernameMapper.jaje)).toEqual(Region.UK);
   });
 
   test('Maps Muerto correctly', () => {
-    expect(UsernameMapper.map('RayBryceCA')).toEqual(Region.CANADA);
+    expect(UsernameMapper.map(UsernameMapper.muerto)).toEqual(Region.CANADA);
   });
 
   test('Maps Wilson correctly', () => {
-    expect(UsernameMapper.map('Hario')).toEqual(Region.NY);
+    expect(UsernameMapper.map(UsernameMapper.wilson)).toEqual(Region.NY);
   });
 
   test('Maps others correctly', () => {

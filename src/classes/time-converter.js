@@ -17,7 +17,7 @@ class TimeConverter {
       return undefined;
     }
 
-    const region = UsernameMapper.map(message.author.username);
+    const region = UsernameMapper.map(message.author.id);
     const convertedDate = TimezoneConverter.convertTimezoneHard(date, region);
     const regionDate = new RegionDate(convertedDate, region);
     const dategroup = this._getDateGroup(regionDate);
