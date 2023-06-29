@@ -3,7 +3,7 @@ const Regions = {
   NY: 'NY',
   UK: 'UK',
   ESTONIA: 'Estonia',
-  CANADA: 'NL',
+  CANADA: 'Lunenburg',
 };
 
 export default Regions;
