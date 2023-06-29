@@ -15,7 +15,7 @@ describe('Region mapper', () => {
   });
 
   test('Canada', () => {
-    expect(RegionMapper.map(Region.CANADA)).toEqual('America/St_Johns');
+    expect(RegionMapper.map(Region.CANADA)).toEqual('America/Halifax');
   });
 
   test('NY', () => {

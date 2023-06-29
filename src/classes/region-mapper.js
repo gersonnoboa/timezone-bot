@@ -10,7 +10,7 @@ class RegionMapper {
       case Region.ECUADOR:
         return 'America/Guayaquil';
       case Region.CANADA:
-        return 'America/St_Johns';
+        return 'America/Halifax';
       case Region.NY:
         return 'America/New_York';
       default:

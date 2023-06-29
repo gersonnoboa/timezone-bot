@@ -37,7 +37,7 @@ describe('Timezone converter', () => {
         Region.CANADA
       );
 
-      expect(date.zoneName).toEqual('America/St_Johns');
+      expect(date.zoneName).toEqual('America/Halifax');
     });
 
     test('Maps US time correctly', () => {
@@ -84,7 +84,7 @@ describe('Timezone converter', () => {
         Region.CANADA
       );
 
-      expect(date.zoneName).toEqual('America/St_Johns');
+      expect(date.zoneName).toEqual('America/Halifax');
     });
 
     test('Maps Ecuadorian time correctly', () => {
