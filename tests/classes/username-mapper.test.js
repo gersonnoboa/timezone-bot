@@ -10,8 +10,12 @@ describe('Username mapper', () => {
     expect(UsernameMapper.map(UsernameMapper.jaje)).toEqual(Region.UK);
   });
 
-  test('Maps Muerto correctly', () => {
-    expect(UsernameMapper.map(UsernameMapper.muerto)).toEqual(Region.CANADA);
+  test('Maps Muerto CA correctly', () => {
+    expect(UsernameMapper.map(UsernameMapper.muertoCa)).toEqual(Region.CANADA);
+  });
+
+  test('Maps Muerto EU correctly', () => {
+    expect(UsernameMapper.map(UsernameMapper.muertoEu)).toEqual(Region.CANADA);
   });
 
   test('Maps Wilson correctly', () => {
